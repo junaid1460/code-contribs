@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <body>
+        <p>
+            Redirecting
+            <span id="count"> </span>
+        </p>
+        <script>
+            var count = document.getElementById('count');
+            window.waitTime = 10;
+            window.redirectUrl = "http://google.co.in";
+            window.redirectHandle = setInterval(function(){
+                if(waitTime == 0){
+                    clearInterval(redirectHandle);
+                    window.location.href = redirectUrl;
+                }
+                count.innerHTML = " in " + waitTime;
+                waitTime-=1;
+            }, 1000)
+        </script>
+    </body>
+</html>
