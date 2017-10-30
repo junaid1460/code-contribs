@@ -12,5 +12,3 @@ try:
     print("Executed successfully")
 except:
     pass
-res = cursor.execute("select * from Player")
-print(res.fetchall())
