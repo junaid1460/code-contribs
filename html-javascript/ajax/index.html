@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.value = null;
+        var req = new XMLHttpRequest()
+        req.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                window.value = req.responseText;
+                // console.log(value)
+            }
+        }
+        req.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', false)
+        req.send()
+        console.log(value)
+    </script>
+</body>
+</html>
